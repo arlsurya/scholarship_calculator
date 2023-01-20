@@ -1,0 +1,311 @@
+<div class="body">
+  <nav class="navbar navbar-light bg-light">
+    <a (click)="reload()" class="navbar-brand">
+        <img  src="../../assets/gca.png" height="40px" alt="">
+       <span class="cross mr-3 ml-3"> <i class="fa fa-times " aria-hidden="true"></i></span>
+       
+        <img src="../../assets/calculator_logo.png" height="40px" alt="">
+    </a>
+    <div class="navbar-brand"><h3><strong> Scholarship Calculator </strong></h3></div>
+    </nav>
+    <div class="container-fluid mt-2">
+      <h4>
+          <ul>
+            <li><b>Choose Subject  Grade as per Theory Subjects</b></li>
+           </ul>
+          </h4>
+
+    </div>
+    
+    <mat-divider></mat-divider>
+
+    <div class="container-fluid mt-2">
+      <div class="container-fluid option-section">
+        
+       <form (change)="changedata($event)" >
+       
+        <mat-form-field  appearance="fill">
+
+          <mat-label>{{sub1name}}:</mat-label>
+          <mat-select [disabled]="disabled1" [formControl]="subject1control" required (valueChange)="englishPick($event)" (valueChange)="changedata($event)">
+            <mat-option >--</mat-option>
+  
+        <mat-option value="A+">A+</mat-option>
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B+">B+</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C+">C+</mat-option>
+        <mat-option value="C">C</mat-option>
+
+          </mat-select>
+          <mat-error *ngIf="subject1control.hasError('required')">Please choose a Grade of {{sub1name}} Subject</mat-error>
+          <mat-hint>{{subject1control.value?.sound}}</mat-hint>
+          
+        </mat-form-field>
+
+
+        
+        <mat-form-field appearance="fill">
+
+          <mat-label>{{sub2name}}:</mat-label>
+          <mat-select [disabled]="disabled2" [formControl]="subject2control" required (valueChange)="nepaliPick($event)" (valueChange)="changedata($event)">
+            <mat-option>--</mat-option>
+            <mat-option value="A+">A+</mat-option>
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B+">B+</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C+">C+</mat-option>
+        <mat-option value="C">C</mat-option>
+          </mat-select>
+          <mat-error *ngIf="subject2control.hasError('required')">Please choose a Grade of {{sub2name}} Subject</mat-error>
+          <mat-hint>{{subject2control.value?.sound}}</mat-hint>
+          
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+
+          <mat-label>{{sub3name}}:</mat-label>
+          <mat-select [disabled]="disabled3" [formControl]="subject3control" required (valueChange)="mathPick($event)" (valueChange)="changedata($event)">
+            <mat-option>--</mat-option>
+            <mat-option value="A+">A+</mat-option>
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B+">B+</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C+">C+</mat-option>
+        <mat-option value="C">C</mat-option>
+          </mat-select>
+          <mat-error *ngIf="subject3control.hasError('required')">Please choose a Grade of {{sub3name}} Subject</mat-error>
+          <mat-hint>{{subject3control.value?.sound}}</mat-hint>
+          
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+
+          <mat-label>{{sub4name}}:</mat-label>
+          <mat-select [disabled]="disabled4" [formControl]="subject4control" required (valueChange)="sciencePick($event)" (valueChange)="changedata($event)">
+            <mat-option>--</mat-option>
+            <mat-option value="A+">A+</mat-option>
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B+">B+</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C+">C+</mat-option>
+        <mat-option value="C">C</mat-option>
+          </mat-select>
+          <mat-error *ngIf="subject4control.hasError('required')">Please choose a Grade of {{sub4name}} Subject</mat-error>
+          <mat-hint>{{subject4control.value?.sound}}</mat-hint>
+          
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+
+          <mat-label>{{sub5name}}:</mat-label>
+          <mat-select [disabled]="disabled5" [formControl]="subject5control" required (valueChange)="accountPick($event)" (valueChange)="changedata($event)">
+            <mat-option>--</mat-option>
+            <mat-option value="A+">A+</mat-option>
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B+">B+</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C+">C+</mat-option>
+        <mat-option value="C">C</mat-option>
+          </mat-select>
+          <mat-error *ngIf="subject5control.hasError('required')">Please choose a Grade of {{sub5name}} Subject</mat-error>
+          <mat-hint>{{subject5control.value?.sound}}</mat-hint>
+          
+        </mat-form-field>
+        
+      </form>
+     
+     
+      </div>
+      <div class="container option-second mt-2">
+      <mat-form-field appearance="fill">
+
+        <mat-label>Rank:</mat-label>
+        <mat-select [disabled]="disabled6" (valueChange)="rankData($event)" name="" id="rank" (valueChange)="changedata($event)">
+          <mat-option value="0">--</mat-option>
+          <mat-option value="15">{{first}}</mat-option>
+          <mat-option value="10">{{second}}</mat-option>
+          <mat-option value="5">{{third}}</mat-option>
+        </mat-select>
+       
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+
+        <mat-label>First 100 Admission:</mat-label>
+        <mat-select [disabled]="disabled7" (valueChange)="top100($event)" (valueChange)="changedata($event)">
+          <mat-option>--</mat-option>
+          
+          <mat-option value="Yes">Yes</mat-option>
+          <mat-option value="NO">NO</mat-option>
+        </mat-select>
+       
+      </mat-form-field>
+      <button (click)="reload()" class="btn btn-primary btn-sm">Reset</button>
+
+        
+     </div>
+
+    </div>
+    
+    <div class="container">
+      <!-- <p><b> Fee Details</b></p>
+      <p><b> Gurukul Tution Fees = {{totalFee}} </b></p>
+      <p>Less Scholarship</p>
+     -->
+      <h3><strong>1.</strong> Merit Based Scholarship</h3>
+    
+      <table class="table table-bordered border">
+        <tr style="background-color: White ; color:black;">
+          <th>Subject</th>
+          <th>Grade</th>
+          <th>Scholorship</th>
+        </tr>
+    
+        <tr>
+          <td>{{sub1name}}</td>
+          <td>{{sub1}}</td>
+          <td id="eng">{{english}}%</td>
+    
+        </tr>
+        <tr>
+          <td>{{sub2name}}</td>
+          <td>{{sub2}}</td>
+          <td id="nep">{{nepali}}%</td>
+    
+    
+        </tr>
+        <tr>
+          <td>{{sub3name}}</td>
+          <td>{{sub3}}</td>
+          <td id="math">{{math}}%</td>
+    
+    
+        </tr>
+        <tr>
+          <td>{{sub4name}}</td>
+          <td>{{sub4}}</td>
+          <td id="science">{{science}}%</td>
+    
+    
+        </tr>
+        <tr>
+          <td>{{sub5name}}</td>
+          <td>{{sub5}}</td>
+          <td id="acc">{{account}}%</td>
+    
+    
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center"><b> Total</b></td>
+          <!-- <td></td> -->
+    
+          <td><b>{{sum}}%</b></td>
+        </tr>
+        <tr >
+          <td colspan="2" class="text-center"><b>Scholarship Amount</b></td>
+          <!-- <td></td> -->
+          <td>{{lessP}}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center"><b>Fee After First Scholorship</b></td>
+          <td>{{lessFirst}}</td>
+        </tr>
+    
+      </table>
+      <h3> <strong>2. </strong>College Topper Scholarship</h3>
+      <table class="table table-bordered border">
+        <tr>
+          
+          <th></th>
+          <th><b>Rank</b></th>
+          <th><b>Scholorship</b></th>
+    
+    
+        </tr>
+    
+        <tr>
+          <td>College Topper</td>
+          <td>{{top}}</td>
+          <td id="rank">{{rank}}%</td>
+    
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center"><b> Scholarship Amount</b></td>
+          <td>{{secondS}}</td>
+    
+    
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center"><b>Fee After Second Scholarship</b></td>
+          <td>{{less2}}</td>
+    
+    
+        </tr>
+    
+    
+      </table>
+    
+      <hr>
+     
+    
+      <h3> <strong>3.</strong> First Come First Serve</h3>
+      <table class="table table-bordered">
+    
+    
+        
+        <tr>
+          <td>First 100 Admission</td>
+          <td>{{topH}}</td>
+          <td>{{topText}}%</td>
+    
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center"><b> Scholorship Amount</b></td>
+         
+          <td>{{thirdS}}</td>
+        </tr>
+        <tr>
+          
+          <td colspan="2" class="text-center"><b>Fee After Third Scholarship</b></td>
+          <td>{{less3}}</td>
+        </tr>
+    
+      </table>
+      <br>
+    
+      <!--   -->
+      <h3>Total Scholarship Amount</h3>
+      <table class="table table-bordered">
+        <tr>
+          
+          <td colspan="2" class="text-center"><b>Total</b></td>
+          <td>{{totalAmt}}</td>
+    
+    
+        </tr>
+        
+      </table>
+    <br>
+      <table class="table table-bordered" >
+       
+        
+    
+        <tr style="background-color:#EDE6D6 ;">
+          <td class="text-center"><b> Net Payable Fee</b></td>
+          <td colspan="2"><b>{{netFee}}</b></td>
+       
+        </tr>
+        
+      </table>
+      <br><br>
+      <br>
+      <hr>
+    
+    
+    </div>
+
+
+</div>
+
+
+<app-footer></app-footer>

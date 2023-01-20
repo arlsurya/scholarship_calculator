@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  
+.wrapper{
+    width: 1139px;
+    height: 551px;
+    background: #fff;
+    margin: 15px auto 0;
+  }
+
+  .wrapper .title{
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 1px solid #ebedec;
+  }
+
+  /* .wrapper .tabs_wrap{ */
+    /* padding: 5px; */
+    /* border-bottom: 1px solid #ebedec; */
+    /* position: absolute;
+    top: 79px; */
+  /* } */
+  
+  .wrapper .tabs_wrap ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #E4E9F7;
+  }
+  .wrapper .tabs_wrap ul li{
+    width: 135px;
+      text-align: center;
+      background: #FFF;
+      border-right: 1px solid #c1c4c9;
+      padding: 13px 15px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    width: 154px;
+  }
+
+  .wrapper .tabs_wrap ul li:first-child{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  .wrapper .tabs_wrap ul li:last-child{
+    border-right: 0px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+
+  .wrapper .tabs_wrap ul li:hover
+{
+  background: #695CFE !important;
+  color: #fff !important;
+}
+
+
+
+.wrapper .container .item_wrap{
+    padding: 10px 20px;
+    border-bottom: 1px solid #ebedec;
+    cursor: pointer;
+  }
+
+  .wrapper .container .item_wrap:hover{
+    background: #FFF;
+  }
+
+  .wrapper .container .item{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  
+.item_wrap .item .item_left{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  /* div.container.container-sms{
+    width: 1138px;
+    background-color: #fff;
+    position: absolute;
+    top: 158px;
+    left: 168px;
+    border-radius: 6px;
+} */
+
+/* @media(min-width:800px){
+  div.addContactSection{
+    position: absolute;
+    right: 620px;
+    top: 403px;
+  }
+}  */
+/* @media(min-width:800px){
+  div.addTemplateSection{
+    position: relative;
+    top: -208px;
+    left: 425px;
+  }
+}  */
+@media(min-width:320px){
+ 
+  .wrapper{
+    width: 340px;
+    
+  }
+  
+} 
+ 
+@media(min-width:320px){
+ 
+  #submit_msg{
+    float: right;
+    position: relative;
+    top: -23px;
+    
+  }
+} 
+ 
+@media(min-width:481px){
+
+  .wrapper{
+    width: 500px;
+    
+  }
+} 
+ 
+@media(min-width:481px){
+  
+ 
+  #submit_msg{
+    float: right;
+    position: relative;
+    top: -23px;
+    
+  }
+} 
+ 
+@media(min-width:769px){
+ 
+  .wrapper{
+    width: 788px;
+    height: 546px;
+    
+  }
+} 
+@media(min-width:1025px){
+  .wrapper{
+    width: 950px;
+    
+  }
+  div a.addC{
+    position: absolute !important;
+    left: 357px !important;
+    top: 30px;
+  }
+  div a.addT{
+    position: absolute !important;
+    left: 520px !important;
+    top: -150px;
+  }
+
+  
+  
+} 
+@media(min-width:1201px){
+  .wrapper{
+    width: 1120px;
+    
+  }
+  div a.addC{
+    position: absolute !important;
+    left: 430px !important;
+    top: 30px;
+  }
+  div a.addT{
+    position: absolute !important;
+    left: 620px !important;
+    top: -150px;
+  }
+} 
+@media(max-width:1010px){
+  h1 .text.h3{
+    visibility: hidden;
+  }
+}
+
+ @media(min-width:800px){
+  div a.addC{
+    position: absolute;
+    left: 301px;
+    top: 30px;
+  }
+  div .btn.btn1{
+    
+    position: absolute;
+    top: -9px;
+  }
+}
+
+ @media(min-width:800px){
+  div a.addT{
+    position: absolute;
+    left: 430px;
+    top: -150px;
+  }
+  
+}
+
+div a.upload{
+ position: absolute;
+ left: 450px;
+ top: 30px;
+}
+
+@media (max-width:1200px){
+  div a.upload{
+    display: none;
+  }
+}
+@media (max-width:1000px){
+
+  h1.text.h3{
+    visibility: hidden;
+  }
+}
+
+#card1{
+  border: 1px solid;
+  height: 400px;
+}
+
